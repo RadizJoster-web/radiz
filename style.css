@@ -1,0 +1,1233 @@
+:root {
+  --bg: #dcd7c9;
+  --text: #2c3639;
+  --desain: #83b4ff;
+  --darkbg: #222831;
+}
+
+/* font-family: "Cactus Classical Serif", serif; */
+/* font-family: "Lato", sans-serif; */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 500vh;
+  background-color: white;
+  color: var(--text);
+}
+body.active {
+  background-color: var(--darkbg);
+  color: var(--bg);
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  width: 100%;
+  height: 50px;
+  z-index: 10;
+}
+
+nav div .burger {
+  display: none;
+}
+
+nav h1 {
+  font-family: "Cactus Classical Serif", serif;
+  color: var(--text);
+}
+nav h1.active {
+  font-family: "Cactus Classical Serif", serif;
+  color: var(--bg);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+nav ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  padding: 5px 0;
+  transition: 0.2s;
+  text-decoration: none;
+  color: var(--text);
+}
+
+nav ul li a.active {
+  color: var(--bg);
+}
+
+nav ul li:hover a {
+  background-color: var(--desain);
+  box-shadow: 3px 3px 3px #ff0080, -3px -3px 3px #ffff80;
+  transform: scale(1.05);
+}
+
+nav ul li:hover a.active {
+  color: var(--text);
+}
+
+nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+nav div a {
+  color: var(--text);
+  font-size: 25px;
+}
+
+nav div a.active {
+  color: var(--bg);
+}
+
+nav div button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px black;
+  border: 1.5px solid black;
+  background-color: black;
+  transition: 0.2s;
+}
+
+nav div button:active {
+  transform: scale(0.9);
+}
+
+nav div button img {
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  transition: 0.2s;
+}
+
+nav div button:hover img {
+  transform: scale(1.3);
+}
+
+nav div button:active img {
+  transform: scale(1);
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.home .home-dekor {
+  position: absolute;
+  top: -700px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100vh;
+  padding: 0; /* or use another valid value like 'padding: 10px;' */
+  z-index: -1;
+  background-color: var(--desain);
+  animation: masuk 0.8s ease-out 0.6s forwards;
+}
+
+.home .home-dekor h1 {
+  rotate: 90deg;
+  font-size: 50px;
+  color: white;
+  filter: drop-shadow(5px 5px 5px black);
+  font-family: "Lato", sans-serif;
+  transition: 0.3s;
+  animation-name: scroll;
+  animation-timing-function: scroll;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateY(200px);
+  }
+}
+
+.home .home-dekor h1.active {
+  color: var(--text);
+}
+
+.home .profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+}
+
+.home .profile div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 400px;
+}
+
+.home .profile div h3 {
+  font-size: 30px;
+}
+
+.home .profile div h3 span {
+  position: relative;
+}
+
+.home .profile div h3 span.active::after {
+  background-color: var(--darkbg);
+}
+
+.home .profile div h3 span::before {
+  content: "Evreyone";
+  color: var(--desain);
+  animation: kata 20s infinite;
+}
+
+.home .profile div h3 span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: white;
+  border-left: 2px solid var(--desain);
+  transition: 0.3s;
+  animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
+}
+
+.home .profile div h3 span.active::after {
+  background: var(--darkbg);
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid transparent;
+  }
+}
+
+@keyframes kata {
+  0%,
+  20% {
+    content: "Evreyone";
+  }
+  21%,
+  40% {
+    content: "كل شئ";
+  }
+  41%,
+  60% {
+    content: "Todo";
+  }
+  61%,
+  80% {
+    content: "Alles";
+  }
+  81%,
+  100% {
+    content: "Semuanya";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}
+
+.home .profile div h1 {
+  font-size: 50px;
+}
+
+.home .profile div h2 {
+  font-size: 40px;
+  color: var(--desain);
+}
+
+.home .profile div p {
+  width: 300px;
+}
+
+.home .profile div span {
+  margin-top: 20px;
+}
+
+.home span a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  padding: 5px;
+  outline: none;
+  border: 1px solid black;
+  color: var(--text);
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.home span a.active {
+  color: var(--bg);
+  border: 1px solid var(--bg);
+}
+
+.home span a:hover {
+  background-color: var(--desain);
+  box-shadow: 3px 3px 3px #ff0080, -3px -3px 3px #ffff80;
+  transform: scale(1.1);
+}
+
+.home img {
+  filter: drop-shadow(0 10px 10px black);
+}
+
+.home .home-sosmed {
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  width: 300px;
+  height: 70px;
+  list-style: none;
+}
+
+.home .home-sosmed li {
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home .home-sosmed li a {
+  color: var(--text);
+}
+
+.home .home-sosmed li a.active {
+  color: var(--bg);
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px;
+  gap: 100px;
+  width: 100%;
+  height: 400px;
+  background-color: var(--bg);
+  transition: 0.3s;
+}
+
+.about.active {
+  background-color: black;
+}
+
+.about div {
+  position: relative;
+}
+
+.about div .aboutImg_dekor {
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 50px;
+  height: 200px;
+}
+
+.about div .aboutImg_dekor span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.about div .aboutImg_dekor span:nth-child(1) {
+  background-color: #ff0080;
+}
+.about div .aboutImg_dekor span:nth-child(2) {
+  background-color: #ffff80;
+}
+.about div .aboutImg_dekor span:nth-child(3) {
+  background-color: #83b4ff;
+}
+
+.about div .aboutImg_dekor2 {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  border-bottom-right-radius: 10px;
+  border-right: 5px solid #83b4ff;
+  border-bottom: 5px solid #ff0080;
+  transition: 0.5s;
+}
+.about div .aboutImg_dekor2.hover {
+  width: 100%;
+  height: 100%;
+}
+
+.about div .aboutImg_dekor3 {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 50px;
+  height: 50px;
+  border-top-left-radius: 10px;
+  border-left: 5px solid #83b4ff;
+  border-top: 5px solid #af47d2;
+  transition: 0.5s;
+}
+.about div .aboutImg_dekor3.hover {
+  width: 100%;
+  height: 100%;
+}
+
+.about div img {
+  object-fit: cover;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.about span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  width: 400px;
+}
+
+.about span h1 {
+  font-size: 40px;
+  color: var(--desain);
+  font-family: "Lato", sans-serif;
+}
+
+.about span h1 span {
+  width: 250px;
+  height: 4px;
+  background-color: var(--desain);
+}
+
+.about span p {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.about span p.active {
+  color: var(--bg);
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  width: 100%;
+  height: 110vh;
+  padding: 100px;
+  position: relative;
+}
+
+.skill .skill-dekor {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 320px;
+}
+
+.skill .skill-dekor span {
+  position: relative;
+  width: 5px;
+  height: 100px;
+  background-color: var(--desain);
+}
+
+.skill .skill-dekor span:last-child {
+  height: 120px;
+}
+
+.skill .skill-dekor span:last-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+  background-color: white;
+}
+
+.skill .skill-dekor span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+  background-color: white;
+}
+
+.skill h1 {
+  position: relative;
+  font-size: 40px;
+  color: var(--desain);
+  font-family: "Lato", sans-serif;
+}
+
+.skill h1 span {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 200px;
+  height: 3px;
+  background-color: var(--desain);
+}
+
+.skill ul {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.skill ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+  width: 250px;
+  height: 230px;
+  gap: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.skill ul li h1.active {
+  color: var(--bg);
+}
+
+.skill ul li img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  filter: contrast(25%);
+  transition: 0.3s;
+}
+
+.skill ul li img:hover {
+  filter: contrast(100%);
+}
+
+.skill ul li div {
+  display: flex;
+  flex-direction: column;
+  justify-content: cen;
+  align-items: center;
+}
+
+.skill ul li div h1 {
+  font-size: 30px;
+  color: var(--text);
+}
+
+.skill ul li div p {
+  text-align: center;
+}
+
+.skill .pipa {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  background-color: white;
+}
+.skill .pipa img {
+  object-fit: cover;
+  width: 300px;
+  height: 400px;
+}
+
+.project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 130px;
+  width: 100%;
+  padding: 100px 20px;
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--bg), var(--bg), transparent);
+  z-index: -1;
+}
+
+.project h1 {
+  color: var(--desain);
+  font-size: 40px;
+  font-family: "Lato", sans-serif;
+  position: relative;
+  filter: drop-shadow(5px 5px 0 black);
+}
+
+.project h1 span {
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 3px;
+  background-color: var(--desain);
+}
+
+.project .project-dekor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.project #bglightMode {
+  display: block;
+}
+.project #bglightMode.active {
+  display: none;
+}
+
+.project #bgdarkMode {
+  display: none;
+}
+.project #bgdarkMode.active {
+  display: block;
+}
+
+.project ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  list-style: none;
+}
+
+.project ul li {
+  position: relative;
+  min-width: 350px;
+  height: 200px;
+  transition: 0.5s;
+  box-shadow: 0 0 10px black;
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+
+.project ul li:hover img {
+  transform: scale(1.2);
+  rotate: -5deg;
+}
+
+.project ul li:hover span {
+  bottom: 10px;
+}
+
+.project ul li img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(50%);
+  transition: 0.3s;
+}
+
+.project ul li span {
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 150px;
+  padding-left: 20px;
+  transition: 0.3s;
+}
+
+.project ul li span h1 {
+  font-size: 30px;
+  color: var(--bg);
+}
+
+.project ul li span p {
+  color: var(--bg);
+}
+
+.project ul li span div:last-child {
+  display: flex;
+  gap: 10px;
+}
+
+.project ul li span div:last-child a {
+  text-decoration: none;
+  color: var(--bg);
+  border: 1px solid white;
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.project ul li span div:last-child a:hover {
+  background-color: var(--desain);
+  box-shadow: 3px 3px 3px #ff0080, -3px -3px 3px #ffff80;
+  transform: scale(1.1);
+  color: var(--text);
+}
+
+.toTop {
+  position: absolute;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px;
+  background-color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.toTop.active {
+  background-color: var(--darkbg);
+  color: var(--bg);
+}
+
+.toTop:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px;
+}
+
+.toTop:active {
+  transform: scale(1);
+  background-color: whitesmoke;
+}
+
+.toTop svg {
+  width: 30px;
+  height: 30px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  padding-bottom: 10px;
+}
+
+.contact h1 {
+  font-size: 40px;
+  font-family: "Lato", sans-serif;
+  color: var(--desain);
+  position: relative;
+}
+
+.contact h1 span {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 250px;
+  height: 3px;
+  background-color: var(--desain);
+}
+
+.contact .container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact .container .form-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  width: 300px;
+  height: 100%;
+}
+
+.contact .container .form-contact span {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  width: 200px;
+  min-height: 50px;
+}
+
+.contact .container .form-contact span label {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+
+.contact .container .form-contact span input {
+  padding: 5px;
+  width: 250px;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact .container .form-contact span input.active {
+  color: var(--bg);
+  border-bottom: 2px solid white;
+}
+
+.contact .container .form-contact span textarea {
+  width: 250px;
+  height: 100px;
+  padding: 5px;
+  outline: none;
+  border: 2px solid black;
+  background-color: transparent;
+}
+
+.contact .container .form-contact span textarea.active {
+  color: var(--bg);
+  border: 2px solid white;
+}
+
+.contact .container .form-contact button {
+  width: 250px;
+  padding: 5px 0;
+  outline: none;
+  border: 1px solid black;
+  transition: 0.2s;
+  color: var(--text);
+  background-color: transparent;
+}
+
+.contact .container .form-contact button.active {
+  border: 1px solid white;
+  color: var(--bg);
+}
+
+.contact .container .form-contact button:hover {
+  background-color: var(--desain);
+  box-shadow: 3px 3px 3px #ff0080, -3px -3px 3px #ffff80;
+  transform: scale(1.05);
+}
+
+.contact .container img {
+  position: absolute;
+  right: 100px;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  animation: pesawat 10s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px);
+}
+
+@keyframes pesawat {
+  0% {
+    transform: translateY(1);
+  }
+  5% {
+    transform: translateY(-50px);
+  }
+  10% {
+    transform: translateY(50px);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  20% {
+    transform: translateY(50px);
+  }
+  25% {
+    transform: translateY(-50px);
+  }
+  30% {
+    transform: translateY(50px);
+  }
+  35% {
+    transform: translateY(-50px);
+  }
+  45% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translate(-200px, 200px);
+  }
+  60% {
+    transform: translate(400px, -400px);
+  }
+  70% {
+    transform: translate(400px, -400px);
+  }
+  90% {
+    transform: translate(200px, -200px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+footer svg {
+  position: absolute;
+  z-index: -1;
+}
+
+footer .home-sosmed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 300px;
+  height: 70px;
+  list-style: none;
+}
+
+footer .home-sosmed li {
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+footer .home-sosmed li a {
+  color: var(--text);
+}
+
+footer .home-sosmed li a.active {
+  color: var(--bg);
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    width: 480px;
+    overflow-x: hidden;
+  }
+
+  nav {
+    width: 480px;
+    height: 50px;
+    padding: 10px;
+    position: relative;
+  }
+
+  nav h1 {
+    font-size: 20px;
+  }
+
+  nav div .burger {
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  nav ul {
+    position: absolute;
+    right: -200px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0;
+    width: 150px;
+    height: 300px;
+    box-shadow: 0 0 5px black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: white;
+    transition: 0.5s ease-in-out;
+  }
+
+  nav ul.active {
+    right: 0;
+  }
+
+  nav ul li a.active {
+    color: var(--text);
+  }
+
+  .home {
+    width: 480px;
+    padding: 100px 10px;
+    overflow-x: hidden;
+  }
+
+  .home .profile {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .home .profile div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home .profile div h3 {
+    font-size: 20px;
+    height: 30px;
+    text-align: inherit;
+  }
+
+  .home .profile div h1 {
+    text-align: inherit;
+    font-size: 25px;
+  }
+
+  .home .profile div h2 {
+    text-align: inherit;
+    font-size: 25px;
+  }
+
+  .home .profile div p {
+    text-align: inherit;
+    font-size: 13px;
+  }
+
+  .home .profile img {
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
+  }
+
+  .home .home-sosmed {
+    display: none;
+  }
+
+  .home .home-dekor {
+    display: none;
+  }
+
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .about div .aboutImg_dekor span {
+    width: 20px;
+    height: 20px;
+  }
+
+  .about .about-foto img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .about span h1 {
+    font-size: 30px;
+    text-align: inherit;
+  }
+
+  .about span h1 span {
+    width: 200px;
+  }
+
+  .about span p {
+    font-size: 13px;
+    width: 350px;
+    text-align: inherit;
+  }
+
+  .skill {
+    padding: 100px 10px;
+  }
+
+  .skill h1 {
+    font-size: 30px;
+  }
+
+  .skill h1 span {
+    width: 150px;
+  }
+
+  .skill ul {
+    flex-wrap: wrap;
+  }
+
+  .skill ul li {
+    width: 150px;
+    height: 150px;
+  }
+
+  .skill ul li img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill ul li div h1 {
+    font-size: 20px;
+  }
+
+  .skill ul li div p {
+    font-size: 13px;
+  }
+
+  .project {
+    padding: 10px;
+  }
+
+  .contact h1 {
+    text-align: center;
+  }
+
+  .contact h1 span {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contact img {
+    display: none;
+  }
+
+  footer {
+    justify-content: center;
+    align-items: end;
+  }
+}
